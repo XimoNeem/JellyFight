@@ -7,11 +7,20 @@ public class SceneController : MonoBehaviour
     [SerializeField] private GameObject _enemyPrefab, _playerPrefab;
     [SerializeField] private Transform _enemyPosition, _playerPosition;
 
+    private Fighter _currentPlayer, _currentEnemy;
+
     public void SpawnFighters()
     {
-        Enemy enemy = Instantiate(_enemyPrefab, _enemyPosition.position, _enemyPosition.rotation).GetComponent<Enemy>();
-        Player player = Instantiate(_playerPrefab, _playerPosition.position, _playerPosition.rotation).GetComponent<Player>();
+        _currentEnemy = Instantiate(_enemyPrefab, _enemyPosition.position, _enemyPosition.rotation).GetComponent<Enemy>();
+        _currentPlayer = Instantiate(_playerPrefab, _playerPosition.position, _playerPosition.rotation).GetComponent<Player>();
 
-        FindObjectOfType<CameraController>().SetTargets(enemy, player);
+        FindObjectOfType<CameraController>().SetTargets(_currentEnemy, _currentPlayer);
+    }
+    public void DestroyFighters()
+    {
+        _currentEnemy = _currentPlayer = null;
+
+        Destroy(_currentPlayer.gameObject);
+        Destroy(_currentEnemy.gameObject);
     }
 }

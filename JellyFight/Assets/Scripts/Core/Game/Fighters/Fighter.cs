@@ -4,14 +4,9 @@ using UnityEngine;
 
 public class Fighter : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private bool _isRagdoll = false;
 
-    // Update is called once per frame
-    void Update()
+    public void SetRagdoll(bool state)
     {
         
     }

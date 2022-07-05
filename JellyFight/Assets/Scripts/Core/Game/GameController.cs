@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    public CurrentSceneType CurrentScene { get; private set; } = CurrentSceneType.Main;
-
     private const float TIME_SMOOTH = 1.5f;
+
+    public CurrentSceneType CurrentScene { get; private set; } = CurrentSceneType.Main;
+    [SerializeField] private Transform _mainScene, _battleScene;
+
     private CameraController _cameraController;
     private UIController _uiController;
+
     private float _targetTimeScale = 1;
-    [SerializeField] private Transform _mainScene, _battleScene;
 
     private void Start()
     {
@@ -43,7 +45,7 @@ public class GameController : MonoBehaviour
 
         FindObjectOfType<SceneController>().SpawnFighters();
     }
-    public void FinishFight()
+    public void FinishFight(bool win)
     {
         if (_cameraController != null)
         {
@@ -55,7 +57,8 @@ public class GameController : MonoBehaviour
 
         Destroy(FindObjectOfType<Enemy>().gameObject);
         Destroy(FindObjectOfType<Player>().gameObject);
-        _uiController.ActivateWinItems();
+
+        if(win) { _uiController.ActivateWinItems(); }
     }
     public void SetCurrentScene(CurrentSceneType scene)
     {

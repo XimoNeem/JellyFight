@@ -15,7 +15,6 @@ public class Player : Fighter
     {
         transform.position = Vector3.Lerp(transform.position, _targetPosition, Time.fixedDeltaTime);
     }
-
     public void MoveForvard()
     {
         _targetPosition += Vector3.right * 1.5f;
