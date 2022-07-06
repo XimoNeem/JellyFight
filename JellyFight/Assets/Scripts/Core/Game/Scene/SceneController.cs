@@ -11,15 +11,15 @@ public class SceneController : MonoBehaviour
 
     private void Start()
     {
-        EventManager.Insnance.OnFightStart.AddListener(SpawnFighters);
-        EventManager.Insnance.OnFightFinish.AddListener(DestroyFighters);
+        EventManager.Instance.OnFightStart.AddListener(SpawnFighters);
+        EventManager.Instance.OnFightFinish.AddListener(DestroyFighters);
     }
     public void SpawnFighters()
     {
         _currentEnemy = Instantiate(_enemyPrefab, _enemyPosition.position, _enemyPosition.rotation).GetComponent<Enemy>();
         _currentPlayer = Instantiate(_playerPrefab, _playerPosition.position, _playerPosition.rotation).GetComponent<Player>();
 
-        FindObjectOfType<CameraController>().SetTargets(_currentEnemy, _currentPlayer);
+        FindObjectOfType<CameraController>().SetTargets(_currentPlayer, _currentEnemy);
     }
     public void DestroyFighters()
     {

@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -23,7 +22,6 @@ public class UIController : MonoBehaviour
             item.gameObject.SetActive(!isMain);
         }
     }
-
     public void ActivateWinItems()
     {
         _winWindow.SetActive(true);

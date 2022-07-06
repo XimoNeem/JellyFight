@@ -15,7 +15,7 @@ public class CameraController : MonoBehaviour
     
     private Coroutine _coroutine;
 
-    public void SetTargets(Enemy enemy, Player player)
+    public void SetTargets(Fighter enemy, Fighter player)
     {
         _figthers[0] = player;
         _figthers[1] = enemy;

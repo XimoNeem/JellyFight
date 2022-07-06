@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameController : MonoBehaviour
@@ -41,7 +39,7 @@ public class GameController : MonoBehaviour
             _cameraController.MoveCamera(_battleScene.position, true);
         }
 
-        EventManager.Insnance.OnFightStart.Invoke();
+        EventManager.Instance.OnFightStart.Invoke();
 
         SetCurrentScene(CurrentSceneType.Battle);
         _uiController.ActivateUIItems(CurrentScene);
@@ -54,7 +52,7 @@ public class GameController : MonoBehaviour
             _cameraController.MoveCamera(_mainScene.position);
         }
 
-        EventManager.Insnance.OnFightStart.Invoke();
+        EventManager.Instance.OnFightStart.Invoke();
 
         SetCurrentScene(CurrentSceneType.Main);
         _uiController.ActivateUIItems(CurrentScene);

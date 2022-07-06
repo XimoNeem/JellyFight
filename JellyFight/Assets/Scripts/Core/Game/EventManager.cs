@@ -1,15 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class EventManager : MonoBehaviour
 {
-    public static EventManager Insnance;
-    public UnityEvent OnFightStart, OnFightFinish;
+    public static EventManager Instance;
+    public UnityEvent OnFightStart, OnFightFinish, OnWin, OnLose;
 
     private void Awake()
     {
-        Insnance = this;
+        Instance = this;
     }
 }
