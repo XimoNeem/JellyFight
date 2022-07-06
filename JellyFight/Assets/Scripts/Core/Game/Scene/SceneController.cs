@@ -9,10 +9,15 @@ public class SceneController : MonoBehaviour
 
     private Fighter _currentPlayer, _currentEnemy;
 
-    private void Start()
+    private void OnEnable()
     {
-        EventManager.Instance.OnFightStart.AddListener(SpawnFighters);
-        EventManager.Instance.OnFightFinish.AddListener(DestroyFighters);
+        EventManager.OnFightStart += SpawnFighters;
+        EventManager.OnFightFinish += DestroyFighters;
+    }
+    private void OnDisable()
+    {
+        EventManager.OnFightStart -= SpawnFighters;
+        EventManager.OnFightFinish -= DestroyFighters;
     }
     public void SpawnFighters()
     {
@@ -23,9 +28,9 @@ public class SceneController : MonoBehaviour
     }
     public void DestroyFighters()
     {
-        _currentEnemy = _currentPlayer = null;
-
         Destroy(_currentPlayer.gameObject);
         Destroy(_currentEnemy.gameObject);
+
+        _currentEnemy = _currentPlayer = null;
     }
 }

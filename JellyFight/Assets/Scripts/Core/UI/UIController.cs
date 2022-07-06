@@ -8,6 +8,16 @@ public class UIController : MonoBehaviour
     [SerializeField] private RectTransform[] _mainSceneUIItems, _battleSceneUIItems;
     [SerializeField] private GameObject _winWindow;
 
+    private void OnEnable()
+    {
+        EventManager.OnWin += ActivateWinItems;
+        EventManager.OnSceneChanged += ActivateUIItems;
+    }
+    private void OnDisable()
+    {
+        EventManager.OnWin -= ActivateWinItems;
+        EventManager.OnSceneChanged -= ActivateUIItems;
+    }
     public void ActivateUIItems(CurrentSceneType scene)
     {
         bool isMain = true;

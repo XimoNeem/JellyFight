@@ -39,10 +39,9 @@ public class GameController : MonoBehaviour
             _cameraController.MoveCamera(_battleScene.position, true);
         }
 
-        EventManager.Instance.OnFightStart.Invoke();
-
         SetCurrentScene(CurrentSceneType.Battle);
-        _uiController.ActivateUIItems(CurrentScene);
+        EventManager.OnFightStart?.Invoke();
+        EventManager.OnSceneChanged?.Invoke(CurrentScene);
     }
     public void FinishFight(bool win)
     {
@@ -52,12 +51,12 @@ public class GameController : MonoBehaviour
             _cameraController.MoveCamera(_mainScene.position);
         }
 
-        EventManager.Instance.OnFightStart.Invoke();
-
         SetCurrentScene(CurrentSceneType.Main);
-        _uiController.ActivateUIItems(CurrentScene);
+        EventManager.OnFightFinish?.Invoke();
+        EventManager.OnSceneChanged?.Invoke(CurrentScene);
 
-        if(win) { _uiController.ActivateWinItems(); }
+        if (win) { EventManager.OnWin?.Invoke(); }
+        else { EventManager.OnLose?.Invoke(); }
     }
     public void SetCurrentScene(CurrentSceneType scene)
     {

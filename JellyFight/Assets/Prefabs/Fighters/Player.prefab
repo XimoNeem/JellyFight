@@ -3394,6 +3394,11 @@ PrefabInstance:
       propertyPath: _originalPorition
       value: 
       objectReference: {fileID: 3504122834072493856}
+    - target: {fileID: -3589161099760861960, guid: 0f34d4e061d52934db339823ed88c55a,
+        type: 3}
+      propertyPath: _originalPosition
+      value: 
+      objectReference: {fileID: 3504122834072493856}
     - target: {fileID: 5607631600140521194, guid: 0f34d4e061d52934db339823ed88c55a,
         type: 3}
       propertyPath: m_RootOrder
@@ -3484,6 +3489,11 @@ PrefabInstance:
       propertyPath: _originalPorition
       value: 
       objectReference: {fileID: 3504122834055971113}
+    - target: {fileID: -3589161099760861960, guid: 0f34d4e061d52934db339823ed88c55a,
+        type: 3}
+      propertyPath: _originalPosition
+      value: 
+      objectReference: {fileID: 3504122834055971113}
     - target: {fileID: 5607631600140521194, guid: 0f34d4e061d52934db339823ed88c55a,
         type: 3}
       propertyPath: m_RootOrder
@@ -3572,6 +3582,11 @@ PrefabInstance:
     - target: {fileID: -3589161099760861960, guid: 0f34d4e061d52934db339823ed88c55a,
         type: 3}
       propertyPath: _originalPorition
+      value: 
+      objectReference: {fileID: 3504122832449630072}
+    - target: {fileID: -3589161099760861960, guid: 0f34d4e061d52934db339823ed88c55a,
+        type: 3}
+      propertyPath: _originalPosition
       value: 
       objectReference: {fileID: 3504122832449630072}
     - target: {fileID: 5607631600140521194, guid: 0f34d4e061d52934db339823ed88c55a,
@@ -3757,6 +3772,11 @@ PrefabInstance:
     - target: {fileID: -3589161099760861960, guid: 0f34d4e061d52934db339823ed88c55a,
         type: 3}
       propertyPath: _originalPorition
+      value: 
+      objectReference: {fileID: 3504122832421508346}
+    - target: {fileID: -3589161099760861960, guid: 0f34d4e061d52934db339823ed88c55a,
+        type: 3}
+      propertyPath: _originalPosition
       value: 
       objectReference: {fileID: 3504122832421508346}
     - target: {fileID: 5607631600140521194, guid: 0f34d4e061d52934db339823ed88c55a,

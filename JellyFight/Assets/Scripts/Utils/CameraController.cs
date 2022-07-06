@@ -23,7 +23,7 @@ public class CameraController : MonoBehaviour
     private void Awake()
     {
         _camera = GetComponent<Camera>();
-        if (_figthers.Length != 2) { Debug.LogError("Set fighters"); }
+        if (_figthers.Length != 2) { Debug.LogError("Set the prefab"); }
     }
 
     private void Update()

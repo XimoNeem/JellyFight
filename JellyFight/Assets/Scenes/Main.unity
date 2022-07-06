@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.44402242, g: 0.49316543, b: 0.5722324, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3705,6 +3705,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e0e7e079d0db944c8d3210e93574658, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _targetType: 1
 --- !u!1 &1030548772
 GameObject:
   m_ObjectHideFlags: 0
@@ -4108,7 +4109,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.14315796, y: 26.59311}
+  m_AnchoredPosition: {x: 0.1430664, y: 26.59311}
   m_SizeDelta: {x: -199.7137, y: -253.1862}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1119121222
@@ -9157,11 +9158,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad4634aa4bd4dee46a4851c9ffba7ed4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TimeScaledImage: {fileID: 204931534}
   _mainSceneUIItems:
   - {fileID: 911245315}
   - {fileID: 1786477665}
   _battleSceneUIItems: []
-  TimeScaledImage: {fileID: 204931534}
   _winWindow: {fileID: 1197267544}
 --- !u!1 &2138183214
 GameObject:
