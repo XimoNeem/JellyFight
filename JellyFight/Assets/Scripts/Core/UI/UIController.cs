@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
 {
-    [SerializeField] private RectTransform[] _mainSceneUIItems, _battleSceneUIItems;
     public Image TimeScaledImage;
+    [SerializeField] private RectTransform[] _mainSceneUIItems, _battleSceneUIItems;
     [SerializeField] private GameObject _winWindow;
 
     public void ActivateUIItems(CurrentSceneType scene)

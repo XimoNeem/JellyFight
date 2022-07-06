@@ -40,10 +40,11 @@ public class GameController : MonoBehaviour
         {
             _cameraController.MoveCamera(_battleScene.position, true);
         }
+
+        EventManager.Insnance.OnFightStart.Invoke();
+
         SetCurrentScene(CurrentSceneType.Battle);
         _uiController.ActivateUIItems(CurrentScene);
-
-        FindObjectOfType<SceneController>().SpawnFighters();
     }
     public void FinishFight(bool win)
     {
@@ -52,11 +53,11 @@ public class GameController : MonoBehaviour
             _cameraController.SetFollow(false);
             _cameraController.MoveCamera(_mainScene.position);
         }
+
+        EventManager.Insnance.OnFightStart.Invoke();
+
         SetCurrentScene(CurrentSceneType.Main);
         _uiController.ActivateUIItems(CurrentScene);
-
-        Destroy(FindObjectOfType<Enemy>().gameObject);
-        Destroy(FindObjectOfType<Player>().gameObject);
 
         if(win) { _uiController.ActivateWinItems(); }
     }

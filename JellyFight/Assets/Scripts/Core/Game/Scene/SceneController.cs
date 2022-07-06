@@ -9,6 +9,11 @@ public class SceneController : MonoBehaviour
 
     private Fighter _currentPlayer, _currentEnemy;
 
+    private void Start()
+    {
+        EventManager.Insnance.OnFightStart.AddListener(SpawnFighters);
+        EventManager.Insnance.OnFightFinish.AddListener(DestroyFighters);
+    }
     public void SpawnFighters()
     {
         _currentEnemy = Instantiate(_enemyPrefab, _enemyPosition.position, _enemyPosition.rotation).GetComponent<Enemy>();
