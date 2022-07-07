@@ -11,13 +11,13 @@ public class SceneController : MonoBehaviour
 
     private void OnEnable()
     {
-        EventManager.OnFightStart += SpawnFighters;
-        EventManager.OnFightFinish += DestroyFighters;
+        EventBus.OnFightStart += SpawnFighters;
+        EventBus.OnFightFinish += DestroyFighters;
     }
     private void OnDisable()
     {
-        EventManager.OnFightStart -= SpawnFighters;
-        EventManager.OnFightFinish -= DestroyFighters;
+        EventBus.OnFightStart -= SpawnFighters;
+        EventBus.OnFightFinish -= DestroyFighters;
     }
     public void SpawnFighters()
     {

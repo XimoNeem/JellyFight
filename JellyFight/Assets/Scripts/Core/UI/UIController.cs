@@ -10,13 +10,13 @@ public class UIController : MonoBehaviour
 
     private void OnEnable()
     {
-        EventManager.OnWin += ActivateWinItems;
-        EventManager.OnSceneChanged += ActivateUIItems;
+        EventBus.OnWin += ActivateWinItems;
+        EventBus.OnSceneChanged += ActivateUIItems;
     }
     private void OnDisable()
     {
-        EventManager.OnWin -= ActivateWinItems;
-        EventManager.OnSceneChanged -= ActivateUIItems;
+        EventBus.OnWin -= ActivateWinItems;
+        EventBus.OnSceneChanged -= ActivateUIItems;
     }
     public void ActivateUIItems(CurrentSceneType scene)
     {

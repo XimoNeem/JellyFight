@@ -40,8 +40,8 @@ public class GameController : MonoBehaviour
         }
 
         SetCurrentScene(CurrentSceneType.Battle);
-        EventManager.OnFightStart?.Invoke();
-        EventManager.OnSceneChanged?.Invoke(CurrentScene);
+        EventBus.OnFightStart?.Invoke();
+        EventBus.OnSceneChanged?.Invoke(CurrentScene);
     }
     public void FinishFight(bool win)
     {
@@ -52,11 +52,11 @@ public class GameController : MonoBehaviour
         }
 
         SetCurrentScene(CurrentSceneType.Main);
-        EventManager.OnFightFinish?.Invoke();
-        EventManager.OnSceneChanged?.Invoke(CurrentScene);
+        EventBus.OnFightFinish?.Invoke();
+        EventBus.OnSceneChanged?.Invoke(CurrentScene);
 
-        if (win) { EventManager.OnWin?.Invoke(); }
-        else { EventManager.OnLose?.Invoke(); }
+        if (win) { EventBus.OnWin?.Invoke(); }
+        else { EventBus.OnLose?.Invoke(); }
     }
     public void SetCurrentScene(CurrentSceneType scene)
     {
