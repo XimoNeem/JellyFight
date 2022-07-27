@@ -1,18 +1,27 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LootBox : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private Animator _animator;
+    private readonly int[] _rewadrTable = { 100, 200, 300, 500, 1000 };
+
+    private void Awake()
+    {
+        _animator = GetComponent<Animator>();    
+    }
+
+    /// <summary>
+    /// Run using AnimationEvent
+    /// </summary>
+    public void Open()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    private int GetRewardValue()
     {
-        
+        int rewardIndex = Random.Range(0, _rewadrTable.Length);
+        return _rewadrTable[rewardIndex];
     }
 }

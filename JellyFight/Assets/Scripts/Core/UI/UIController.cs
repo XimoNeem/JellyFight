@@ -7,6 +7,7 @@ public class UIController : MonoBehaviour
     public Image TimeScaledImage;
     [SerializeField] private RectTransform[] _mainSceneUIItems, _battleSceneUIItems;
     [SerializeField] private GameObject _winWindow;
+    
 
     private void OnEnable()
     {

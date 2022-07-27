@@ -1,0 +1,24 @@
+using System.Collections;
+using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+
+public class UIScreen_RewardScreen : IUIScreen
+{
+    [SerializeField] private GameObject[] _screenItems;
+    [SerializeField] private TMP_Text _rewardValueText;
+    [SerializeField] private Button _claimButton;
+
+    private void ShowScreen()
+    {
+        ActivateItems(true);
+    }
+
+    private void ActivateItems(bool state)
+    {
+        for (int i = 0; i < _screenItems.Length; i++)
+        {
+            _screenItems[i].SetActive(state);
+        }
+    }
+}
